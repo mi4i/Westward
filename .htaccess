@@ -1,2 +1,3 @@
 RewriteEngine On
+RewriteRule ^westward$ /westward/ [R=301,L,NC]
 RewriteRule ^westward/?$ /Westward/ [L,NC]
