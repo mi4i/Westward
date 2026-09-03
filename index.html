@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Тестовая страница синхронизации GitHub и хостинга.">
+  <title>Westward | Sync check</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">WESTWARD / DEPLOY LAB</p>
+      <h1>Синхронизация<br><span>работает.</span></h1>
+      <p class="intro">Тестовая страница для проверки цепочки VS Code → GitHub → хостинг.</p>
+      <div class="hero-meta">
+        <span class="pulse"></span>
+        <span>Сайт опубликован</span>
+        <strong id="currentTime">--:--:--</strong>
+      </div>
+    </section>
+
+    <section class="status-grid" aria-label="Статус подключений">
+      <article class="status-card github-card">
+        <div class="card-top"><span class="icon">GH</span><span class="status-dot"></span></div>
+        <p class="label">Репозиторий</p>
+        <h2>GitHub</h2>
+        <p class="detail">mi4i / Westward</p>
+        <a href="https://github.com/mi4i/Westward" target="_blank" rel="noreferrer">Открыть репозиторий <span>↗</span></a>
+      </article>
+      <article class="status-card hosting-card">
+        <div class="card-top"><span class="icon">SFTP</span><span class="status-dot"></span></div>
+        <p class="label">Удалённый сервер</p>
+        <h2>cPanel hosting</h2>
+        <p class="detail">31.131.18.219 · port 21098</p>
+        <button id="checkButton" type="button">Проверить страницу <span>→</span></button>
+      </article>
+    </section>
+
+    <section class="proof" aria-live="polite">
+      <div class="proof-number">01</div>
+      <div>
+        <p class="label">Последняя проверка</p>
+        <h2 id="checkMessage">Ожидает действия</h2>
+        <p id="checkDetail">Измените этот файл и нажмите Ctrl+S, чтобы проверить загрузку.</p>
+      </div>
+    </section>
+
+    <footer><span>WESTWARD</span><span>LIVE SYNC TEST / 2026</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
