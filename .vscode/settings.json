@@ -2,6 +2,16 @@
   "terminal.integrated.env.windows": {
     "PATH": "C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;${env:PATH}"
   },
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
   "actionButtons": {
     "reloadButton": null,
     "loadNpmCommands": false,
