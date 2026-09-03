@@ -20,11 +20,12 @@ jobs:
           ssh-private-key: ${{ secrets.HOSTING_SSH_PRIVATE_KEY }}
 
       - name: Add hosting server to known hosts
-        run: ssh-keyscan -p 22 31.131.18.219 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p 21098 31.131.18.219 >> ~/.ssh/known_hosts
 
       - name: Upload files
         run: |
           rsync -az --delete \
+            -e "ssh -p 21098" \
             --exclude '.git/' \
             --exclude '.github/' \
             --exclude 'AGENTS.md' \
