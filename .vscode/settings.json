@@ -1,5 +1,19 @@
 {
   "terminal.integrated.env.windows": {
     "PATH": "C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;${env:PATH}"
+  },
+  "actionButtons": {
+    "reloadButton": null,
+    "loadNpmCommands": false,
+    "commands": [
+      {
+        "name": "$(cloud-upload) Опубликовать",
+        "tooltip": "Отправить изменения на GitHub и хостинг",
+        "color": "#c9ee63",
+        "useVsCodeApi": true,
+        "command": "workbench.action.tasks.runTask",
+        "args": "Опубликовать на GitHub"
+      }
+    ]
   }
 }
