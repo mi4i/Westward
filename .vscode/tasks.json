@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Опубликовать на GitHub",
+      "type": "shell",
+      "command": "& 'C:\\Program Files\\Git\\cmd\\git.exe' add . ':!AGENTS.md'; & 'C:\\Program Files\\Git\\cmd\\git.exe' diff --cached --quiet; if ($LASTEXITCODE -eq 0) { Write-Host 'Нет новых изменений для отправки.'; exit 0 }; & 'C:\\Program Files\\Git\\cmd\\git.exe' commit -m 'Обновил сайт'; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:\\Program Files\\Git\\cmd\\git.exe' push",
+      "windows": {
+        "command": "& 'C:\\Program Files\\Git\\cmd\\git.exe' add . ':!AGENTS.md'; & 'C:\\Program Files\\Git\\cmd\\git.exe' diff --cached --quiet; if ($LASTEXITCODE -eq 0) { Write-Host 'Нет новых изменений для отправки.'; exit 0 }; & 'C:\\Program Files\\Git\\cmd\\git.exe' commit -m 'Обновил сайт'; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:\\Program Files\\Git\\cmd\\git.exe' push"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}
