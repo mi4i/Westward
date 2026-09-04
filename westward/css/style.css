@@ -1,0 +1,775 @@
+/* ==========================================================================
+   1. ОБЩИЕ СТИЛИ И СБРОС (ПЕРЕМЕННЫЕ И АДАПТИВНАЯ БАЗА ДЛЯ 2K/4K)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b0c0e;
+    color: #333333;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER) С ПОЛНЫМ ПРИМЫКАНИЕМ К КРАЮ И ДИАГОНАЛЬНЫМ СРЕЗОМ
+   ========================================================================== */
+.site-header {
+    background-color: #0b0c0e;
+    position: relative;
+    z-index: 100;
+    padding: 0;
+    overflow: hidden; /* Исключает горизонтальную прокрутку */
+}
+
+.header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch; /* Растягивает логотип на всю высоту шапки */
+    justify-content: space-between;
+    padding-right: 20px;
+    height: 75px;
+    position: relative;
+}
+
+/* Красный блок логотипа */
+.brand-logo-wrapper {
+    position: relative;
+    background-color: #e31b23;
+    display: flex;
+    align-items: center;
+    flex: 0 0 315px;
+    min-width: 315px;
+    padding: 0 42px 0 25px;
+    text-decoration: none;
+    isolation: isolate;
+    transition: background-color 0.25s ease;
+}
+
+/* Дотягиваем красный фон до левого края даже при центрированном контейнере */
+.brand-logo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 100vw;
+    background-color: #e31b23;
+    transition: background-color 0.25s ease;
+}
+
+/* Отдельный треугольник создаёт чистый косой переход, как на референсе */
+.brand-logo-wrapper::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: calc(100% - 1px);
+    width: 48px;
+    height: 100%;
+    background-color: #e31b23;
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    transition: background-color 0.25s ease;
+    pointer-events: none;
+}
+
+.brand-logo-wrapper:hover,
+.brand-logo-wrapper:hover::before,
+.brand-logo-wrapper:hover::after {
+    background-color: #c4141b;
+}
+
+.brand-logo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-symbol {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* Навигация */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #e31b23;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Правый блок контактов */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-icon {
+    color: #e31b23;
+    font-size: 18px;
+}
+
+.phone-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-number {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.work-hours {
+    font-size: 11px;
+    color: #888888;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-red {
+    background-color: #e31b23;
+    color: #ffffff;
+}
+
+.btn-red:hover {
+    background-color: #c4141b;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #0b0c0e;
+    transform: translateY(-2px);
+}
+
+.btn-white {
+    background-color: #ffffff;
+    color: #0b0c0e;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+.btn-white-border {
+    border: 2px solid #cccccc;
+    color: #111111;
+    background: transparent;
+}
+
+.btn-white-border:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ БАННЕР С УХОДОМ МАШИНЫ В ТЕМНОТУ (HERO)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 520px;
+    background-color: #0b0c0e;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    right: 0;
+    /* Фото заходит под диагональную маску — стык полностью скрыт. */
+    width: 65%;
+    height: 140%;
+    background-image: url('../images/hero-truck.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    will-change: transform;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to right, transparent 48%, rgba(11, 12, 14, 0.04) 70%, rgba(11, 12, 14, 0.28) 100%),
+        linear-gradient(to bottom, rgba(11, 12, 14, 0.28) 0%, transparent 18%, transparent 82%, rgba(11, 12, 14, 0.45) 100%);
+    z-index: 2;
+}
+
+/* Чёрная область текста с выраженным диагональным переходом к фотографии */
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 48%;
+    background: linear-gradient(90deg, #0b0c0e 0%, #0b0c0e 82%, #101215 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+}
+
+.hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 60px 20px 90px 20px;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-tagline-small {
+    color: #e31b23;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 10px 0 15px 0;
+}
+
+.text-red {
+    color: #e31b23;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.hero-description {
+    font-size: 13px;
+    color: #bbbbbb;
+    margin-bottom: 25px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   4. БЕЛЫЙ ОСНОВНОЙ БЛОК (УСЛУГИ И ИНФОРМАЦИЯ)
+   ========================================================================== */
+.main-white-content {
+    background-color: #ffffff;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 5;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    transform: translateY(-40px);
+    margin-bottom: 20px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 20px 15px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    font-size: 30px;
+    color: #e31b23;
+    margin-bottom: 12px;
+}
+
+.service-title {
+    font-size: 13px;
+    font-weight: 900;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.service-desc {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.service-link {
+    font-size: 11px;
+    font-weight: 800;
+    color: #e31b23;
+    text-decoration: none;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 1fr 280px;
+    gap: 25px;
+    align-items: start;
+    padding-top: 10px;
+}
+
+.about-image-wrapper {
+    border-radius: 6px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.section-tag {
+    color: #e31b23;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-heading {
+    font-size: 24px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.about-paragraph {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.why-list {
+    list-style: none;
+}
+
+.why-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.why-icon {
+    color: #e31b23;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.why-info h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #111111;
+}
+
+.why-info p {
+    color: #666666;
+    font-size: 11px;
+}
+
+.cta-card {
+    background-color: #e31b23;
+    padding: 25px 20px;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+.cta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cta-icon-calendar {
+    font-size: 28px;
+}
+
+.cta-header h3 {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.cta-desc {
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   5. ТЕМНЫЙ НИЖНИЙ БАР (BOTTOM BAR)
+   ========================================================================== */
+.bottom-bar {
+    background-color: #07080a;
+    padding: 25px 0;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bottom-icon-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e31b23;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e31b23;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.bottom-info h5 {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.bottom-info p {
+    font-size: 11px;
+    color: #777777;
+}
+
+/* ==========================================================================
+   6. МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА YOUTUBE
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-window {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 35px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.video-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   7. МЕДИА-ЗАПРОСЫ (АДАПТИВНОСТЬ ДЛЯ ВСЕХ ЭКРАНОВ СМАРТФОНЫ/ПЛАНШЕТЫ/2K)
+   ========================================================================== */
+
+/* Большие 2K и 4K мониторы */
+@media (min-width: 1920px) {
+    html { font-size: 18px; }
+    .container, .header-container, .hero-container { max-width: 1800px; }
+    .hero-title { font-size: 56px; }
+}
+
+/* Ноутбуки и обычные мониторы */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        transform: translateY(-20px);
+    }
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 992px) {
+    .hero-overlay::before {
+        width: 58%;
+    }
+
+    .header-container {
+        padding-right: 16px;
+    }
+
+    .brand-logo-wrapper {
+        flex-basis: 270px;
+        min-width: 270px;
+        padding-left: 20px;
+        padding-right: 32px;
+    }
+
+    .brand-logo-wrapper::after {
+        width: 38px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0b0c0e;
+        padding: 20px;
+        display: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .bottom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .parallax-bg {
+        width: 100%;
+        opacity: 0.25;
+    }
+
+    .hero-overlay::before {
+        width: 100%;
+        background: rgba(11, 12, 14, 0.72);
+        -webkit-clip-path: none;
+        clip-path: none;
+    }
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Маленькие смартфоны */
+@media (max-width: 480px) {
+    .header-container {
+        height: 68px;
+    }
+
+    .brand-logo-wrapper {
+        flex-basis: 225px;
+        min-width: 225px;
+        padding-left: 14px;
+        padding-right: 24px;
+    }
+
+    .brand-logo-wrapper::after {
+        width: 30px;
+    }
+
+    .logo-symbol {
+        font-size: 27px;
+    }
+
+    .logo-title {
+        font-size: 17px;
+    }
+
+    .logo-subtitle {
+        font-size: 8px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+}

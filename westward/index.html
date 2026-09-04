@@ -1,11 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
+    <!-- Задаем кодировку символов UTF-8 для корректного текста -->
     <meta charset="UTF-8">
+    <!-- Настройка Viewport для правильного масштабирования на смартфонах и планшетах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Westward Auto Service</title>
+    
+    <!-- Подключение шрифта Montserrat из Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Подключение векторных иконок FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Подключение стилей согласно вашей иерархии css/style.css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Westward</h1>
+
+    <!-- ==========================================================================
+         БЛОК 1: ТЕМНАЯ ШАПКА САЙТА (HEADER) С МОБИЛЬНЫМ МЕНЮ
+         ========================================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            
+            <!-- Левый красный скошенный блок с логотипом -->
+            <a href="#" class="brand-logo-wrapper">
+                <div class="brand-logo">
+                    <span class="logo-symbol">W</span>
+                    <div class="logo-text">
+                        <span class="logo-title">WESTWARD</span>
+                        <span class="logo-subtitle">AUTO SERVICE</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Кнопка-гамбургер для открытия меню на мобильных устройствах -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Главное навигационное меню -->
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">REVIEWS</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- Правый блок с номером телефона и кнопкой записи -->
+            <div class="header-right">
+                <div class="phone-block">
+                    <i class="fa-solid fa-phone phone-icon"></i>
+                    <div class="phone-details">
+                        <a href="tel:7803499900" class="phone-number">(780) 349-9900</a>
+                        <span class="work-hours">Mon - Fri: 8:00 AM - 5:30 PM</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-red"><i class="fa-regular fa-calendar-check"></i> BOOK APPOINTMENT</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         БЛОК 2: ГЛАВНЫЙ БАННЕР (HERO) С ПАРАЛЛАКСОМ И ТЕМНЫМ ГРАДИЕНТОМ СПРАВА
+         ========================================================================== -->
+    <section class="hero-section">
+        <!-- Фоновое изображение машины images/hero-truck.png для параллакса -->
+        <div class="parallax-bg" id="parallaxBg"></div>
+        
+        <!-- Градиентное затемнение (уводит изображение справа, сверху и снизу в темноту) -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tagline-small">WELCOME TO</span>
+                <h1 class="hero-title">WESTWARD <br><span class="text-red">AUTO SERVICE</span></h1>
+                <p class="hero-subtitle">Reliable service. Honest advice. Quality you can count on.</p>
+                <p class="hero-description">From routine maintenance to complex repairs, our experienced technicians are here to keep your vehicle running at its best.</p>
+                
+                <!-- Кнопки действий -->
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-red"><i class="fa-regular fa-calendar-check"></i> OUR SERVICES</a>
+                    <!-- Кнопка вызова всплывающего окна с видео YouTube -->
+                    <button id="openVideoBtn" class="btn btn-outline"><i class="fa-solid fa-circle-play"></i> WATCH VIDEO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         БЛОК 3: БЕЛЫЙ ОСНОВНОЙ КОНТЕНТ (УСЛУГИ И О НАС)
+         ========================================================================== -->
+    <main class="main-white-content">
+        <div class="container">
+            
+            <!-- 3.1. Адаптивная сетка карточек услуг -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-oil-can service-icon"></i>
+                    <h3 class="service-title">OIL CHANGES</h3>
+                    <p class="service-desc">Keep your engine clean and running smoothly.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-compact-disc service-icon"></i>
+                    <h3 class="service-title">BRAKE SERVICE</h3>
+                    <p class="service-desc">Reliable brake inspections and repairs for your safety.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-car-battery service-icon"></i>
+                    <h3 class="service-title">DIAGNOSTICS</h3>
+                    <p class="service-desc">Advanced diagnostics to find and fix issues fast.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-arrows-spin service-icon"></i>
+                    <h3 class="service-title">TIRES & ALIGNMENT</h3>
+                    <p class="service-desc">Quality tires and precise alignments you can trust.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-bolt service-icon"></i>
+                    <h3 class="service-title">BATTERY SERVICE</h3>
+                    <p class="service-desc">Testing, replacement and charging system service.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-car service-icon"></i>
+                    <h3 class="service-title">AND MORE</h3>
+                    <p class="service-desc">Suspension, exhaust, A/C service and much more.</p>
+                    <a href="#" class="service-link">LEARN MORE &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 3.2. Адаптивный блок информации "О нас" и "Запись" -->
+            <div class="about-grid">
+                
+                <!-- Картинка здания из images/block.png -->
+                <div class="about-image-wrapper">
+                    <img src="images/block.png" alt="Westward Auto Service Building" class="about-img">
+                </div>
+
+                <!-- Колонка О компании -->
+                <div class="about-text-column">
+                    <span class="section-tag">ABOUT WESTWARD</span>
+                    <h2 class="section-heading">Your Local Auto Service Experts</h2>
+                    <p class="about-paragraph">At Westward Auto Service, we take pride in providing top-quality auto repair and maintenance services. Our team is committed to honest work, fair pricing, and customer satisfaction.</p>
+                    <a href="#" class="btn btn-white-border">LEARN MORE ABOUT US</a>
+                </div>
+
+                <!-- Список преимуществ -->
+                <div class="why-column">
+                    <span class="section-tag">WHY CHOOSE US?</span>
+                    <ul class="why-list">
+                        <li class="why-item">
+                            <i class="fa-regular fa-user why-icon"></i>
+                            <div class="why-info">
+                                <h4>Experienced Technicians</h4>
+                                <p>Skilled and certified professionals you can rely on.</p>
+                            </div>
+                        </li>
+                        <li class="why-item">
+                            <i class="fa-regular fa-circle-check why-icon"></i>
+                            <div class="why-info">
+                                <h4>Honest & Transparent</h4>
+                                <p>Clear explanations and upfront pricing.</p>
+                            </div>
+                        </li>
+                        <li class="why-item">
+                            <i class="fa-solid fa-gear why-icon"></i>
+                            <div class="why-info">
+                                <h4>Quality Parts & Equipment</h4>
+                                <p>We use high-quality parts and modern equipment.</p>
+                            </div>
+                        </li>
+                        <li class="why-item">
+                            <i class="fa-regular fa-thumbs-up why-icon"></i>
+                            <div class="why-info">
+                                <h4>Customer Satisfaction</h4>
+                                <p>Our priority is getting you back on the road safely.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Красная карточка онлайн-записи -->
+                <div class="cta-card">
+                    <div class="cta-header">
+                        <i class="fa-regular fa-calendar-days cta-icon-calendar"></i>
+                        <h3>BOOK YOUR APPOINTMENT TODAY</h3>
+                    </div>
+                    <p class="cta-desc">Schedule your next service with Westward Auto Service and experience the difference.</p>
+                    <a href="#" class="btn btn-white">BOOK NOW &nbsp;&rarr;</a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ==========================================================================
+         БЛОК 4: ТЕМНЫЙ НИЖНИЙ БАР (BOTTOM BAR)
+         ========================================================================== -->
+    <footer class="bottom-bar">
+        <div class="container">
+            <div class="bottom-grid">
+                <div class="bottom-item">
+                    <div class="bottom-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="bottom-info">
+                        <h5>LOCALLY OWNED & OPERATED</h5>
+                        <p>Proudly serving our community.</p>
+                    </div>
+                </div>
+
+                <div class="bottom-item">
+                    <div class="bottom-icon-circle"><i class="fa-regular fa-clock"></i></div>
+                    <div class="bottom-info">
+                        <h5>CONVENIENT HOURS</h5>
+                        <p>Mon - Fri: 8:00 AM - 5:30 PM</p>
+                    </div>
+                </div>
+
+                <div class="bottom-item">
+                    <div class="bottom-icon-circle"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <div class="bottom-info">
+                        <h5>COMPETITIVE PRICING</h5>
+                        <p>Quality service at fair prices.</p>
+                    </div>
+                </div>
+
+                <div class="bottom-item">
+                    <div class="bottom-icon-circle"><i class="fa-solid fa-wrench"></i></div>
+                    <div class="bottom-info">
+                        <h5>ALL MAKES & MODELS</h5>
+                        <p>We service all vehicles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА YOUTUBE-ВИДЕО ПРЯМО НА САЙТЕ
+         ========================================================================== -->
+    <div id="videoModal" class="modal-overlay">
+        <div class="modal-window">
+            <!-- Кнопка закрытия модального окна -->
+            <button id="closeVideoBtn" class="modal-close-btn">&times;</button>
+            <!-- Контейнер для адаптивного видео 16:9 -->
+            <div class="video-responsive-wrapper">
+                <iframe id="youtubeIframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JS файлов согласно иерархии js/main.js -->
+    <script src="js/main.js"></script>
 </body>
 </html>

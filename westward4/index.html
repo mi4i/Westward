@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Кодировка, адаптивность и описание страницы -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Affordable tested used auto parts from Ed's Auto Salvage in Westlock, Alberta.">
+  <title>Ed's Auto Salvage | Quality Used Auto Parts</title>
+  <!-- Шрифт и главный CSS-файл -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Верхняя информационная полоса -->
+  <div class="utility"><span>11040 93 Ave, Westlock, AB</span><span>Mon–Fri: 8:30 AM–5:30 PM</span><a href="tel:18006619033">1-800-661-9033</a></div>
+
+  <!-- Основная шапка с логотипом и мобильным меню -->
+  <header class="header">
+    <a class="logo" href="#top"><span>ED’S</span><strong>AUTO SALVAGE</strong><small>Service · Support · Selection</small></a>
+    <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="nav">MENU</button>
+    <nav id="nav"><a href="#inventory">Inventory</a><a href="#parts">Parts</a><a href="#sell">Sell your car</a><a href="#why">Why us</a><a href="#contact">Contact</a></nav>
+    <a class="header-cta" href="#search">SEARCH PARTS →</a>
+  </header>
+
+  <main id="top">
+    <!-- Hero с параллаксом и поиском запчастей -->
+    <section class="hero">
+      <div class="hero-photo" id="parallax"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <span class="eyebrow">Alberta’s trusted auto recyclers</span>
+        <h1>THE PART YOU NEED.<br><em>THE VALUE YOU WANT.</em></h1>
+        <p>Tested used parts for cars, trucks and SUVs—backed by knowledgeable people who help you find the right fit.</p>
+        <!-- Поисковая панель — главный сценарий первого экрана -->
+        <form class="parts-search" id="search">
+          <div><label for="part">What part do you need?</label><input id="part" type="text" placeholder="Engine, transmission, door..." required></div>
+          <div><label for="vehicle">Vehicle</label><input id="vehicle" type="text" placeholder="Year, make and model" required></div>
+          <button type="submit">FIND MY PART <span>↗</span></button>
+        </form>
+        <p id="searchStatus" class="search-status" role="status"></p>
+      </div>
+      <div class="hero-stats"><div><b>TESTED</b><span>Quality used parts</span></div><div><b>FAST</b><span>Alberta delivery</span></div><div><b>EXPERT</b><span>Fitment assistance</span></div></div>
+    </section>
+
+    <!-- Три ключевых направления компании -->
+    <section class="action-grid" id="parts">
+      <a class="action-card reveal" href="#search"><small>01 / PARTS</small><h2>Search quality<br>used parts</h2><p>Engines, transmissions, body panels and thousands of components.</p><span>SEARCH INVENTORY ↗</span></a>
+      <a class="action-card image-card reveal" href="#inventory"><small>02 / ARRIVALS</small><h2>Fresh vehicles.<br>Fresh inventory.</h2><span>VIEW ARRIVALS ↗</span></a>
+      <a class="action-card red-card reveal" href="#sell"><small>03 / VEHICLES</small><h2>Ready to sell<br>your car?</h2><p>Tell us about your vehicle and get the process started.</p><span>GET STARTED ↗</span></a>
+    </section>
+
+    <!-- Категории запчастей -->
+    <section class="section dark-section" id="inventory">
+      <div class="section-head reveal"><span>01</span><div><small>SHOP BY CATEGORY</small><h2>BUILT TO KEEP<br>YOU MOVING.</h2></div><p>Professionally removed, carefully inventoried and prepared for dependable installation.</p></div>
+      <div class="category-grid">
+        <article class="reveal"><b>ENGINES</b><span>→</span></article><article class="reveal"><b>TRANSMISSIONS</b><span>→</span></article><article class="reveal"><b>BODY PARTS</b><span>→</span></article><article class="reveal"><b>ELECTRICAL</b><span>→</span></article><article class="reveal"><b>WHEELS & TIRES</b><span>→</span></article><article class="reveal"><b>INTERIOR</b><span>→</span></article>
+      </div>
+    </section>
+
+    <!-- Преимущества и доверие -->
+    <section class="section why" id="why">
+      <div class="why-copy reveal"><small>WHY ED’S AUTO SALVAGE</small><h2>USED PARTS.<br><em>REAL CONFIDENCE.</em></h2><p>Our team helps drivers and repair shops source reliable parts while keeping usable components in service and out of landfills.</p><a href="#contact">TALK TO A PARTS EXPERT →</a></div>
+      <div class="why-list">
+        <article class="reveal"><span>01</span><div><h3>Parts matched with care</h3><p>Knowledgeable help with fitment and hard-to-find components.</p></div></article>
+        <article class="reveal"><span>02</span><div><h3>Inspected inventory</h3><p>Parts are professionally removed and carefully inventoried.</p></div></article>
+        <article class="reveal"><span>03</span><div><h3>Delivery that moves</h3><p>Fast regional service for Westlock, Edmonton and communities across Alberta.</p></div></article>
+      </div>
+    </section>
+
+    <!-- Блок продажи автомобиля -->
+    <section class="sell" id="sell"><div class="reveal"><small>SELL YOUR VEHICLE</small><h2>TURN YOUR OLD CAR<br>INTO SOMETHING USEFUL.</h2></div><p class="reveal">Send the year, make, model and condition. Our team will explain the next step.</p><a class="reveal" href="#contact">START A REQUEST ↗</a></section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact"><div><small>NEED A PART TODAY?</small><h2>LET’S FIND IT.</h2></div><a href="tel:18006619033"><span>CALL OUR TEAM</span><strong>1-800-661-9033</strong></a><div><span>VISIT US</span><strong>11040 93 Ave<br>Westlock, AB T7P 2N2</strong></div></section>
+  </main>
+
+  <!-- Подвал -->
+  <footer><a class="logo" href="#top"><span>ED’S</span><strong>AUTO SALVAGE</strong></a><p>Affordable, high-quality used auto parts across Alberta.</p><span>© 2026 Ed’s Auto Salvage</span></footer>
+  <!-- Главный JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

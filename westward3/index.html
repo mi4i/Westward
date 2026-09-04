@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Базовые настройки документа и адаптивного отображения -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Westward Auto Service — responsible repairs, transparent estimates and quality control.">
+    <title>Westward Auto Service — Responsible Auto Care</title>
+
+    <!-- Современный шрифт сайта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Главный файл стилей: путь соответствует папке westward3/css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Декоративные световые пятна для эффекта прозрачного стекла -->
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <!-- ШАПКА: логотип, навигация, телефон и кнопка мобильного меню -->
+    <header class="site-header" id="top">
+        <a class="brand" href="#top" aria-label="Westward Auto Service home">
+            <span class="brand-symbol">W</span>
+            <span class="brand-copy">
+                <strong>WESTWARD</strong>
+                <small>AUTO SERVICE</small>
+            </span>
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a href="#services">Services</a>
+            <a href="#standards">Our standards</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-contact">
+            <span>Mon–Fri · 8:00 AM–5:30 PM</span>
+            <a href="tel:7803499990">(780) 349-9990</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: максимально содержательный первый экран с параллаксом и мини-формой -->
+        <section class="hero-section">
+            <!-- Фоновая фотография двигается при прокрутке через js/main.js -->
+            <div class="hero-photo" id="parallaxPhoto" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <div class="hero-layout">
+                <!-- Основное обещание мастерской -->
+                <div class="hero-content reveal">
+                    <div class="trust-label"><span></span> Responsible service. Documented results.</div>
+                    <h1>Your vehicle.<br><em>Our responsibility.</em></h1>
+                    <p class="hero-lead">We diagnose carefully, explain clearly, and never begin additional work without your approval.</p>
+
+                    <!-- Ключевые гарантии уже на первом экране -->
+                    <div class="promise-grid">
+                        <div><strong>01</strong><span>Estimate before repair</span></div>
+                        <div><strong>02</strong><span>No work without approval</span></div>
+                        <div><strong>03</strong><span>Final quality inspection</span></div>
+                    </div>
+
+                    <div class="hero-links">
+                        <a class="primary-button" href="#contact">Book an appointment <span>→</span></a>
+                        <a class="phone-link" href="tel:7803499990"><small>Talk to our team</small><b>(780) 349-9990</b></a>
+                    </div>
+                </div>
+
+                <!-- Прозрачная мини-форма обращения -->
+                <form class="hero-form glass-card reveal" id="requestForm">
+                    <div class="form-heading">
+                        <div><span>Quick request</span><h2>How can we help?</h2></div>
+                        <b>≈ 60 sec</b>
+                    </div>
+
+                    <label for="customerName">Your name</label>
+                    <input id="customerName" name="name" type="text" autocomplete="name" placeholder="John Smith" required>
+
+                    <label for="customerPhone">Phone number</label>
+                    <input id="customerPhone" name="phone" type="tel" autocomplete="tel" placeholder="(780) 000-0000" required>
+
+                    <label for="serviceType">What does your vehicle need?</label>
+                    <select id="serviceType" name="service" required>
+                        <option value="">Choose a service</option>
+                        <option>Diagnostics</option>
+                        <option>Oil & maintenance</option>
+                        <option>Brake service</option>
+                        <option>Tires & alignment</option>
+                        <option>Other repair</option>
+                    </select>
+
+                    <button class="form-submit" type="submit">Request a callback <span>↗</span></button>
+                    <p class="form-note">We’ll confirm the details before scheduling. No obligation.</p>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <!-- Нижняя стеклянная панель доверия -->
+            <div class="hero-proof glass-card reveal">
+                <div><span class="green-dot"></span><b>Service desk online</b></div>
+                <div><strong>4.9 / 5</strong><span>Customer rating</span></div>
+                <div><strong>Clear estimates</strong><span>Before work begins</span></div>
+                <div><strong>All makes</strong><span>Cars, SUVs & trucks</span></div>
+            </div>
+        </section>
+
+        <!-- УСЛУГИ: понятный список основных направлений -->
+        <section class="section services-section" id="services">
+            <div class="section-heading reveal">
+                <span class="section-number">01</span>
+                <div><small>Complete vehicle care</small><h2>Service without uncertainty.</h2></div>
+                <p>From routine maintenance to complex diagnostics, every recommendation is based on inspection—not assumptions.</p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card reveal"><span>01</span><div class="line-icon">⌁</div><h3>Diagnostics</h3><p>Modern testing to identify the actual cause before parts are replaced.</p><a href="#contact">Learn more →</a></article>
+                <article class="service-card reveal"><span>02</span><div class="line-icon">◉</div><h3>Brake service</h3><p>Thorough inspections and dependable repairs focused on safety.</p><a href="#contact">Learn more →</a></article>
+                <article class="service-card reveal"><span>03</span><div class="line-icon">◌</div><h3>Tires & alignment</h3><p>Precise alignment, rotation and tire care for confident handling.</p><a href="#contact">Learn more →</a></article>
+                <article class="service-card reveal"><span>04</span><div class="line-icon">◇</div><h3>Maintenance</h3><p>Oil changes and scheduled care that protect long-term reliability.</p><a href="#contact">Learn more →</a></article>
+            </div>
+        </section>
+
+        <!-- СТАНДАРТЫ: главный акцент на ответственности мастерской -->
+        <section class="standards-section" id="standards">
+            <div class="standards-copy reveal">
+                <span class="section-number light">02</span>
+                <small>Our responsibility standard</small>
+                <h2>We treat every repair like your safety depends on it.</h2>
+                <p>Because it does. Our process creates accountability from the first inspection to the final road-ready check.</p>
+            </div>
+
+            <div class="standards-list">
+                <article class="standard-item reveal"><b>01</b><div><h3>Evidence before recommendation</h3><p>We inspect, test and document the issue before proposing work.</p></div><span>✓</span></article>
+                <article class="standard-item reveal"><b>02</b><div><h3>Approval before action</h3><p>You understand the work and price before the repair begins.</p></div><span>✓</span></article>
+                <article class="standard-item reveal"><b>03</b><div><h3>Quality before handoff</h3><p>Completed work is checked carefully before your vehicle leaves.</p></div><span>✓</span></article>
+                <article class="standard-item reveal"><b>04</b><div><h3>Answers after service</h3><p>We remain available if you have questions about the repair.</p></div><span>✓</span></article>
+            </div>
+        </section>
+
+        <!-- ПРОЦЕСС: три понятных шага обслуживания -->
+        <section class="section process-section" id="process">
+            <div class="section-heading reveal">
+                <span class="section-number">03</span>
+                <div><small>A clear path forward</small><h2>Three steps. No surprises.</h2></div>
+            </div>
+            <div class="process-grid">
+                <article class="reveal"><span>01</span><h3>Listen & inspect</h3><p>We discuss your concern and perform the appropriate inspection.</p></article>
+                <article class="reveal"><span>02</span><h3>Explain & approve</h3><p>You receive clear findings, options and pricing before deciding.</p></article>
+                <article class="reveal"><span>03</span><h3>Repair & verify</h3><p>We complete approved work and perform a final quality check.</p></article>
+            </div>
+        </section>
+
+        <!-- ФИНАЛЬНЫЙ КОНТАКТНЫЙ БЛОК -->
+        <section class="contact-section" id="contact">
+            <div class="contact-copy reveal"><small>Westward Auto Service</small><h2>Ready for service you can trust?</h2><p>Tell us what your vehicle needs. We’ll help you choose the right next step.</p></div>
+            <div class="contact-actions reveal"><a href="tel:7803499990"><small>Call now</small><strong>(780) 349-9990</strong><span>↗</span></a><a href="#requestForm"><small>Online request</small><strong>Use the quick form</strong><span>↑</span></a></div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ: логотип, часы и быстрые ссылки -->
+    <footer class="site-footer">
+        <a class="brand" href="#top"><span class="brand-symbol">W</span><span class="brand-copy"><strong>WESTWARD</strong><small>AUTO SERVICE</small></span></a>
+        <p>Responsible repairs. Clear communication. Quality you can count on.</p>
+        <span>Mon–Fri · 8:00 AM–5:30 PM</span>
+    </footer>
+
+    <!-- Главный JavaScript: путь соответствует папке westward3/js -->
+    <script src="js/main.js"></script>
+</body>
+</html>
