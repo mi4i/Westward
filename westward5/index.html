@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="Westward Auto Repair in Westlock, Alberta. Modern automotive repair, diagnostics and maintenance." />
+  <title>Westward Auto Repair | Westlock, Alberta</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- Decorative background layers. They are pointer-events:none, so they never block controls. -->
+  <div class="noise" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <!-- Sticky navigation: all links are placeholders for the future multi-page website. -->
+  <header class="site-header" id="top">
+    <div class="shell nav-wrap glass">
+      <a class="brand" href="#top" aria-label="Westward Auto Repair home">
+        <img src="assets/logo.svg" alt="" width="42" height="42" />
+        <span><b>WESTWARD</b><small>AUTO REPAIR</small></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Westward</a>
+        <a href="#process">How it works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="phone-link" href="tel:+17803493750" aria-label="Call Westward Auto Repair">
+          <span class="phone-icon">↗</span>
+          <span><small>Call the shop</small><b>(780) 349-3750</b></span>
+        </a>
+        <button class="btn btn-red compact" data-open-booking>Request service</button>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+
+    <div class="mobile-panel glass" data-mobile-panel>
+      <a href="#services">Services</a><a href="#why">Why Westward</a><a href="#process">How it works</a><a href="#contact">Contact</a>
+      <a class="btn btn-red" href="tel:+17803493750">Call (780) 349-3750</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: deliberately information-dense so the key questions are answered before scrolling. -->
+    <section class="hero section-pad">
+      <div class="hero-scene parallax-layer" data-parallax="0.11" aria-hidden="true">
+        <img src="assets/shop-scene.svg" alt="" />
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><i></i> WESTLOCK, ALBERTA · AUTOMOTIVE REPAIR & SERVICE</div>
+          <h1>Repair done with <span>clarity.</span><br />Service built around <span class="soft">your road.</span></h1>
+          <p class="hero-lead">From warning lights and strange noises to scheduled maintenance and larger mechanical repairs, Westward Auto Repair gives drivers one straightforward place to diagnose, repair and maintain their vehicle.</p>
+
+          <div class="hero-cta-row">
+            <button class="btn btn-red" data-open-booking>Request a service appointment <span>↗</span></button>
+            <a class="btn btn-ghost" href="#services">Explore services <span>↓</span></a>
+          </div>
+
+          <div class="hero-trust-row">
+            <span><b>01</b> Local Westlock shop</span>
+            <span><b>02</b> Mechanical repair</span>
+            <span><b>03</b> Diagnostics & maintenance</span>
+            <span><b>04</b> Parts installation</span>
+          </div>
+        </div>
+
+        <!-- Quick-action panel on desktop; transforms into stacked cards on mobile. -->
+        <aside class="hero-console glass reveal delay-1" aria-label="Quick information">
+          <div class="console-top">
+            <span class="live-dot"></span>
+            <span>WESTWARD SERVICE DESK</span>
+            <span class="console-code">WESTLOCK / AB</span>
+          </div>
+          <div class="quick-grid">
+            <a href="tel:+17803493750" class="quick-card">
+              <small>Phone</small><strong>(780) 349-3750</strong><span>Tap to call ↗</span>
+            </a>
+            <a href="#contact" class="quick-card">
+              <small>Location</small><strong>11040 93 Ave</strong><span>Westlock, AB ↗</span>
+            </a>
+            <div class="quick-card">
+              <small>Hours</small><strong>Mon–Fri</strong><span>8:30 AM–5:30 PM</span>
+            </div>
+            <button class="quick-card quick-button" data-open-booking>
+              <small>Need service?</small><strong>Tell us what’s wrong</strong><span>Open quick request ↗</span>
+            </button>
+          </div>
+          <div class="console-note">
+            <span>Not sure what service you need?</span>
+            <b>Describe the symptom. We’ll start there.</b>
+          </div>
+        </aside>
+      </div>
+
+      <!-- First-screen service radar: horizontal on desktop, touch-scrollable on mobile. -->
+      <div class="shell service-radar-wrap reveal delay-2">
+        <div class="service-radar glass" aria-label="Popular service categories">
+          <a href="#services"><span>◉</span><b>Diagnostics</b><small>Warning lights · noise · drivability</small></a>
+          <a href="#services"><span>✦</span><b>Maintenance</b><small>Oil · fluids · filters · inspections</small></a>
+          <a href="#services"><span>◌</span><b>Brakes</b><small>Pads · rotors · hydraulic system</small></a>
+          <a href="#services"><span>⌁</span><b>Steering & suspension</b><small>Ride · handling · components</small></a>
+          <a href="#services"><span>⚙</span><b>Mechanical repair</b><small>Engine · cooling · drivetrain</small></a>
+          <a href="#services"><span>⚡</span><b>Electrical</b><small>Battery · charging · starting</small></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Positioning statement: calmer editorial block after the dense hero. -->
+    <section class="intro section-pad" id="why">
+      <div class="shell split-grid">
+        <div class="sticky-label reveal"><span>01</span><p>THE SHOP</p></div>
+        <div class="intro-content reveal">
+          <div class="eyebrow"><i></i> A MODERN SERVICE EXPERIENCE</div>
+          <h2>Good repair starts before the wrench turns.</h2>
+          <p class="big-copy">A driver should understand what the vehicle needs, what happens next, and how to reach the shop without digging through a maze of pages. This concept puts services, contact options, hours and location at the front, then lets the deeper details unfold naturally.</p>
+          <div class="principles-grid">
+            <article><span>01</span><h3>Clear first</h3><p>Plain-language service categories and obvious next steps.</p></article>
+            <article><span>02</span><h3>Repair focused</h3><p>The repair shop leads the story. Parts and salvage can remain a secondary ecosystem later.</p></article>
+            <article><span>03</span><h3>Mobile native</h3><p>Tap-to-call, thumb-sized buttons and quick scanning on small screens.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive services matrix. These can later become individual SEO/service pages. -->
+    <section class="services section-pad" id="services">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow"><i></i> COMPLETE AUTO CARE</div><h2>A service menu that answers the question: “Can you fix this?”</h2></div>
+          <p>For the presentation version, every service card is a placeholder route. Once the exact shop offering is approved, each one can become its own detailed page.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card glass reveal"><span class="svc-num">01</span><div class="svc-icon">⌁</div><h3>Vehicle diagnostics</h3><p>Check-engine lights, warning indicators, abnormal noises, rough running and drivability concerns.</p><div class="tags"><span>Scan</span><span>Testing</span><span>Fault finding</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-1"><span class="svc-num">02</span><div class="svc-icon">◔</div><h3>Oil & scheduled maintenance</h3><p>Routine service, fluid checks, filters and preventative inspection to keep small problems from becoming expensive ones.</p><div class="tags"><span>Oil</span><span>Fluids</span><span>Filters</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-2"><span class="svc-num">03</span><div class="svc-icon">◉</div><h3>Brake service & repair</h3><p>Inspection and repair of wear components and the systems responsible for safe, predictable stopping.</p><div class="tags"><span>Pads</span><span>Rotors</span><span>Hydraulics</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal"><span class="svc-num">04</span><div class="svc-icon">⌇</div><h3>Steering & suspension</h3><p>Diagnosis of ride, handling, vibration and steering concerns plus replacement of worn components.</p><div class="tags"><span>Steering</span><span>Ride</span><span>Handling</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-1"><span class="svc-num">05</span><div class="svc-icon">⚙</div><h3>Engine & mechanical repair</h3><p>Mechanical diagnosis and repair for engine-related concerns, leaks, performance problems and supporting systems.</p><div class="tags"><span>Engine</span><span>Leaks</span><span>Mechanical</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-2"><span class="svc-num">06</span><div class="svc-icon">⇄</div><h3>Transmission & drivetrain</h3><p>Inspection of transmission and drivetrain symptoms, fluid-related concerns and component repair or replacement.</p><div class="tags"><span>Transmission</span><span>Axles</span><span>Drivetrain</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal"><span class="svc-num">07</span><div class="svc-icon">⚡</div><h3>Electrical & starting systems</h3><p>Battery, charging, starting and electrical fault diagnosis for common no-start and power-related issues.</p><div class="tags"><span>Battery</span><span>Alternator</span><span>Starter</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-1"><span class="svc-num">08</span><div class="svc-icon">❄</div><h3>Heating, cooling & A/C</h3><p>Cooling-system concerns, cabin heat and air-conditioning diagnosis to keep the vehicle comfortable and protected.</p><div class="tags"><span>Cooling</span><span>Heat</span><span>A/C</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-2"><span class="svc-num">09</span><div class="svc-icon">◌</div><h3>Tires & wheel-related service</h3><p>Condition checks, tire-related concerns and wheel service placeholders for the final confirmed shop capabilities.</p><div class="tags"><span>Tires</span><span>Wheels</span><span>Inspection</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal"><span class="svc-num">10</span><div class="svc-icon">≈</div><h3>Exhaust & emissions-related repair</h3><p>Inspection of exhaust noises, leaks and components affecting drivability or vehicle operation.</p><div class="tags"><span>Exhaust</span><span>Leaks</span><span>Noise</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card glass reveal delay-1"><span class="svc-num">11</span><div class="svc-icon">＋</div><h3>Parts installation</h3><p>Installation requests can be routed directly from the future parts/salvage side into the repair shop workflow.</p><div class="tags"><span>Install</span><span>Parts</span><span>Service</span></div><a href="#">Learn more ↗</a></article>
+          <article class="service-card service-card-red reveal delay-2"><span class="svc-num">12</span><div class="svc-icon">?</div><h3>Not sure what it needs?</h3><p>That’s normal. Start with the symptom, warning light or sound. The website should never force a customer to diagnose the car themselves.</p><button class="text-btn" data-open-booking>Describe the problem ↗</button></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax divider creates a premium pause in the page. -->
+    <section class="parallax-band">
+      <div class="band-art parallax-layer" data-parallax="0.18" aria-hidden="true"></div>
+      <div class="shell band-content reveal">
+        <div class="eyebrow light"><i></i> BUILT FOR REAL-WORLD REPAIR DECISIONS</div>
+        <h2>Less website theatre.<br />More useful information.</h2>
+        <p>Large visuals create atmosphere, but the actions stay practical: call, find the shop, see hours, understand services, request an appointment.</p>
+        <button class="btn btn-red" data-open-booking>Request service <span>↗</span></button>
+      </div>
+    </section>
+
+    <!-- Customer journey. -->
+    <section class="process section-pad" id="process">
+      <div class="shell">
+        <div class="section-head reveal"><div><div class="eyebrow"><i></i> SIMPLE CUSTOMER FLOW</div><h2>From “something feels wrong” to a clear next step.</h2></div><p>The final website can connect this flow to the shop’s real booking or management system once we know what they use.</p></div>
+        <div class="process-line">
+          <article class="reveal"><span>01</span><h3>Tell us the issue</h3><p>Choose a service or simply describe the symptom.</p></article>
+          <article class="reveal delay-1"><span>02</span><h3>Share vehicle details</h3><p>Year, make, model and the best way to contact you.</p></article>
+          <article class="reveal delay-2"><span>03</span><h3>Shop confirms next step</h3><p>The team can follow up with availability or diagnostic direction.</p></article>
+          <article class="reveal"><span>04</span><h3>Get back on the road</h3><p>Clear, human communication stays at the center of the experience.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact: factual details gathered from current listings/site. -->
+    <section class="contact section-pad" id="contact">
+      <div class="shell contact-grid glass reveal">
+        <div class="contact-copy">
+          <div class="eyebrow"><i></i> WESTWARD AUTO REPAIR · WESTLOCK</div>
+          <h2>Your next repair starts with one easy contact.</h2>
+          <p>Presentation placeholder: the final production version can add a real booking endpoint, map embed, Google reviews and service-specific forms.</p>
+          <div class="contact-actions"><a class="btn btn-red" href="tel:+17803493750">Call (780) 349-3750</a><button class="btn btn-ghost dark" data-open-booking>Request service</button></div>
+        </div>
+        <div class="contact-facts">
+          <div><small>Shop</small><strong>Westward Auto Repair</strong></div>
+          <div><small>Address</small><strong>11040 93 Ave<br />Westlock, AB</strong></div>
+          <div><small>Hours</small><strong>Mon–Fri<br />8:30 AM–5:30 PM</strong></div>
+          <div><small>Phone</small><strong>(780) 349-3750</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="brand footer-brand"><img src="assets/logo.svg" alt="" width="42" height="42" /><span><b>WESTWARD</b><small>AUTO REPAIR</small></span></div>
+      <p>Concept homepage for presentation. Repair-first architecture, ready to expand into dedicated service pages after approval.</p>
+      <div class="footer-links"><a href="#top">Home</a><a href="#services">Services</a><a href="#why">Why Westward</a><a href="#contact">Contact</a></div>
+      <div class="footer-meta"><span>© 2026 Westward Auto Repair</span><span>Westlock, Alberta</span></div>
+    </div>
+  </footer>
+
+  <!-- Booking modal: front-end presentation only. No data is submitted anywhere. -->
+  <dialog class="booking-modal" data-booking-modal>
+    <form method="dialog" class="booking-card glass" id="bookingForm">
+      <button class="modal-close" value="cancel" aria-label="Close">×</button>
+      <div class="eyebrow"><i></i> QUICK SERVICE REQUEST</div>
+      <h2>Tell the shop what’s going on.</h2>
+      <p>This is a presentation form. Submission is simulated until the client approves the design and real backend workflow.</p>
+      <div class="form-grid">
+        <label><span>Name</span><input required name="name" placeholder="Your name" /></label>
+        <label><span>Phone</span><input required name="phone" inputmode="tel" placeholder="(780) 000-0000" /></label>
+        <label><span>Vehicle</span><input name="vehicle" placeholder="Year / make / model" /></label>
+        <label><span>Service</span><select name="service"><option>Not sure / diagnosis</option><option>Maintenance</option><option>Brakes</option><option>Steering & suspension</option><option>Mechanical repair</option><option>Electrical</option><option>Heating / cooling / A/C</option><option>Parts installation</option></select></label>
+        <label class="full"><span>What are you noticing?</span><textarea name="message" rows="4" placeholder="Describe the warning light, sound, leak, vibration or service you need."></textarea></label>
+      </div>
+      <button class="btn btn-red full-width" value="default" id="fakeSubmit">Send request <span>↗</span></button>
+      <div class="form-success" role="status" aria-live="polite">Presentation complete. In the real site, this request will go to the shop.</div>
+    </form>
+  </dialog>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
